@@ -33,24 +33,26 @@ class ColaMachine(object):
                 }
             ]
 
-    def available_colas(self):
+    def available_colas(self) -> None:
         for cola in self.__COLA_LIST:
             print(cola['name'], cola['quantity'])
 
-    def __is_empty(self):
-        pass
+    def __is_empty(self, cola_id) -> bool:
+        for cola in self.__COLA_LIST:
+            if cola['id'] == cola_id:
+                return cola['quantity'] == 0
 
-    def pick_cola(self, id):
+    def pick_cola(self, id) -> None:
         for cola in self.__COLA_LIST:
             if cola['id'] == id:
-                if cola['quantity'] > 0:
-                    print(cola['name'])
+                if not self.__is_empty(cola['id']):
+                    print('Here you go ',cola['name'])
                     self.__update_cola_list(id)
                 else:
                    print('The cola you choose is not available')
 
 
-    def __update_cola_list(self, id):
+    def __update_cola_list(self, id) -> None:
         for cola in self.__COLA_LIST:
             if cola['id'] == id:
                 cola.update({'quantity': cola['quantity'] - 1})
