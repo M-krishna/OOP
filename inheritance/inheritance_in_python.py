@@ -192,3 +192,76 @@ child_3.x2()
 child_3.x3()
 child_3.x4()
 print(HYIChildClass3.__mro__)
+
+# Method overriding
+class MOParentClass:
+    def x1(self):
+        print("Function of parent class")
+
+class MOChildClass(MOParentClass):
+    def x1(self):
+        print("Function of child class overriding parent class")
+
+
+method_override_obj = MOChildClass()
+method_override_obj.x1()
+
+method_override_parent_obj = MOParentClass()
+method_override_parent_obj.x1()
+
+# The super() function
+class SuperParentClass:
+    def x1(self):
+        print("Function of parent class for super() example")
+
+class SuperChildClass(SuperParentClass):
+    def x1(self):
+        super().x1()
+        print("Function of child class for super() example")
+
+super_child_obj = SuperChildClass()
+super_child_obj.x1()
+
+class SuperParentClass1:
+    def x1(self):
+        print("Function of parent class for super() example")
+
+class SuperChildClass1(SuperParentClass1):
+    def x1(self):
+        super(SuperChildClass1, self).x1()
+        print("Function of child class for super() example")
+
+super_child_obj1 = SuperChildClass1()
+super_child_obj1.x1()
+
+# super() example using init method
+class SuperInitParentClass:
+    def __init__(self, name):
+        print(name, 'is derived from another class')
+
+class SuperInitChildClass(SuperInitParentClass):
+    def __init__(self, name):
+        print(name, 'is a sub-class')
+        super().__init__(name)
+siobj = SuperInitChildClass('Child')
+
+# second use case of super() example
+class First:
+    def __init__(self):
+        print("first")
+        super().__init__()
+
+class Second:
+    def __init__(self):
+        print("second")
+        super().__init__()
+
+class Third(Second, First):
+    def __init__(self):
+        print("Third")
+        super().__init__()
+
+obj_3 = Third()
+print(First.__mro__)
+print(Second.__mro__)
+print(Third.__mro__)
