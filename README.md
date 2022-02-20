@@ -4,3 +4,4 @@
 - [x] [Encapsulation](https://github.com/M-krishna/OOP/tree/main/encapsulation)
 - [x] [Abstraction](https://github.com/M-krishna/OOP/tree/main/abstraction)
 - [x] [Inheritance](https://github.com/M-krishna/OOP/tree/main/inheritance)
+- [x] [Polymorphism](https://github.com/M-krishna/OOP/tree/main/polymorphism)
