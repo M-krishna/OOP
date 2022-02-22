@@ -5,3 +5,6 @@
 - [x] [Abstraction](https://github.com/M-krishna/OOP/tree/main/abstraction)
 - [x] [Inheritance](https://github.com/M-krishna/OOP/tree/main/inheritance)
 - [x] [Polymorphism](https://github.com/M-krishna/OOP/tree/main/polymorphism)
+
+### Python specific
+- [ ] [Abstract class](https://github.com/M-krishna/OOP/tree/main/abstract_class_python)
