@@ -8,3 +8,4 @@
 
 ### Python specific
 - [ ] [Abstract class](https://github.com/M-krishna/OOP/tree/main/abstract_class_python)
+- [x] [Interface](https://github.com/M-krishna/OOP/tree/main/interface_python)
