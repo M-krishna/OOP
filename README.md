@@ -12,4 +12,4 @@
 - [x] [Interface](https://github.com/M-krishna/OOP/tree/main/interface_python)
 
 # Design Patterns
-A `Design Pattern` is a general repeatable solution to a commonly occuring problem in software design. `Someone has already solved your problems`.
+A Design Pattern is a general repeatable solution to a commonly occuring problem in software design. `Someone has already solved your problems`.
