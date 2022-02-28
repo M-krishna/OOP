@@ -10,3 +10,6 @@
 - [x] [Abstract class](https://github.com/M-krishna/OOP/tree/main/abstract_class_python)
 - [x] [Metaclasses](https://github.com/M-krishna/OOP/tree/main/metaclass_python)
 - [x] [Interface](https://github.com/M-krishna/OOP/tree/main/interface_python)
+
+# Design Patterns
+A `Design Pattern` is a general repeatable solution to a commonly occuring problem in software design. `Someone has already solved your problems`.
