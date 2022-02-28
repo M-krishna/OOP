@@ -83,9 +83,9 @@ class Troll(Character):
 
 # Creating objects / Instantiating objects
 king = King()
-king.fight()
-king.setWeapon(BowAndArrowBehavior())
-king.fight()
+king.fight() # using the default behavior of the King
+king.setWeapon(BowAndArrowBehavior()) # updating the behavior at runtime
+king.fight() # invoking the updated behavior
 
 queen = Queen()
 queen.fight()
