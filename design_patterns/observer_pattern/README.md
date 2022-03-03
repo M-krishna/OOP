@@ -14,4 +14,5 @@ To overcome this limitations we can make the Observers `pull` the data from the 
 
 ## Example 2
 
-
+In this `The Subject` updates `The Observer` that the data is changed by calling the `update` method without passing any data to the method. And the Subject introduces getter methods for the respective data. On `The Observer` side
+we use the newly created `getter` methods on the `Subject` to `pull` the updated data. This allows for loosely coupled design. The Observer can only pull the data it needs, nothing more nothing less.
