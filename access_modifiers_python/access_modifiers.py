@@ -4,10 +4,10 @@ Access modifiers in python
 
 # By default everything is public
 class Example:
-    
+
     class_variable_one = 1
     class_variable_two = 2
-    
+
     def __init__(self, name, age):
         self.name = name
         self.age = age
@@ -22,11 +22,11 @@ class Example:
 # Public access modifier Example
 print("Public access modifiers example")
 print()
-public_access_modifier = Example(name='neo', age=21)
-print('Name: ', public_access_modifier.name)
-print('Age: ', public_access_modifier.age)
-print('Name from function: ', public_access_modifier.getName())
-print('Age from function: ', public_access_modifier.getAge())
+public_access_modifier = Example(name="neo", age=21)
+print("Name: ", public_access_modifier.name)
+print("Age: ", public_access_modifier.age)
+print("Name from function: ", public_access_modifier.getName())
+print("Age from function: ", public_access_modifier.getAge())
 print("end public access modifiers")
 print()
 
@@ -59,7 +59,7 @@ class PrivateAccessModifierExample:
 
 # private access modifier example
 # If we try to access variables/functions that are prefixed with double underscore, we get an error
-private_access_modifier = PrivateAccessModifierExample('krishna', 21)
+private_access_modifier = PrivateAccessModifierExample("krishna", 21)
 print("Private access modifiers example")
 print()
 print(private_access_modifier.accessPrivateGetName())
@@ -74,7 +74,7 @@ print()
 class ProtectedAccessModifierExample:
     _class_variable_one = 1
     _class_variable_two = 2
-    __private_class_variable = 'private_class_variable'
+    __private_class_variable = "private_class_variable"
 
     def __init__(self, name, age):
         self._name = name
@@ -88,7 +88,6 @@ class ProtectedAccessModifierExample:
 
 
 class DerivedFromProtected(ProtectedAccessModifierExample):
-
     def __init__(self, name, age):
         super().__init__(name, age)
 
@@ -106,8 +105,10 @@ class DerivedFromProtected(ProtectedAccessModifierExample):
 
 
 # Protected access modifier examples
-protected_access_modifiers = DerivedFromProtected('Neo', 22)
+protected_access_modifiers = DerivedFromProtected("Neo", 22)
 print(protected_access_modifiers._class_variable_one)
 print(protected_access_modifiers._name)
 print(protected_access_modifiers._age)
-print(protected_access_modifiers.accessPrivateClassVariable()) # throws error since its not possible to access private members of a super class in derived class
+print(
+    protected_access_modifiers.accessPrivateClassVariable()
+)  # throws error since its not possible to access private members of a super class in derived class

@@ -9,6 +9,7 @@ Instead we can import ABC(Abstract base class) from abc module/package which con
 
 from abc import ABC, abstractmethod
 
+
 class Pokemon(ABC):
     def __init__(self, name):
         self.name = name
@@ -17,17 +18,20 @@ class Pokemon(ABC):
     def attack(self):
         pass
 
+
 class Pikachu(Pokemon):
     def attack(self):
         return "Thunder bolt"
+
 
 class Charizard(Pokemon):
     def attack(self):
         return "Flamethrower"
 
+
 # pokemon_obj = Pokemon('Hashira') # TypeError: Can't instantiate abstract class Pokemon with abstract method attack
-pikachu_obj = Pikachu('Hashira')
+pikachu_obj = Pikachu("Hashira")
 print(pikachu_obj.attack())
 
-charizard_obj = Charizard('Inosuke')
+charizard_obj = Charizard("Inosuke")
 print(charizard_obj.attack())

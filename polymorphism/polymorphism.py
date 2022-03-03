@@ -14,6 +14,7 @@ class Dog:
     def intro(self):
         print(f"My name is {self.name} and my age is {self.age}")
 
+
 class Cat:
     def __init__(self, name, age):
         self.name = name
@@ -25,8 +26,9 @@ class Cat:
     def intro(self):
         print(f"My name is {self.name} and my age is {self.age}")
 
-dog_obj = Dog('Max', 3)
-cat_obj = Cat('Kitty', 4)
+
+dog_obj = Dog("Max", 3)
+cat_obj = Cat("Kitty", 4)
 
 for animal in (dog_obj, cat_obj):
     animal.speak()
@@ -47,14 +49,15 @@ class Shape:
 
 class Square(Shape):
     def __init__(self, length):
-        super().__init__('Square')
+        super().__init__("Square")
         self.length = length
 
     def area(self):
         return self.length**2
 
-    def fact(self): # overriden the fact method of parent class
+    def fact(self):  # overriden the fact method of parent class
         return "I am Square shape"
+
 
 square_obj = Square(10)
 print(square_obj.fact())
