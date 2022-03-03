@@ -53,7 +53,7 @@ class WeatherData(Subject):
         self.observers.append(observer)
 
     def removeObserver(self, observer: Observer):
-        self.observers.remove(ob)
+        self.observers.remove(observer)
 
     def notifyObservers(self):
         for ob in self.observers:
@@ -132,3 +132,14 @@ print("Setting new measurements in 3 seconds")
 time.sleep(3)
 statistics_display = StatisticsDisplay(weatherData)
 weatherData.setMeasurements(2.134, 3.123, 7.65)
+
+print()
+print("Removing Statistics observer from the list")
+weatherData.removeObserver(statistics_display) # Removing the observer in runtime
+print("Removed...")
+
+print("Setting new measurements in 3 seconds")
+time.sleep(3)
+weatherData.setMeasurements(43.2, 56.7, 88.9)
+
+
