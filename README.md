@@ -14,5 +14,5 @@
 # Design Patterns
 A Design Pattern is a general repeatable solution to a commonly occuring problem in software design. `Someone has already solved your problems`.
 
-- [ ] [Strategy pattern](https://github.com/M-krishna/OOP/tree/main/design_patterns/strategy_pattern)
-- [ ] [Observer pattern](https://github.com/M-krishna/OOP/tree/main/design_patterns/observer_pattern)
+- [x] [Strategy pattern](https://github.com/M-krishna/OOP/tree/main/design_patterns/strategy_pattern)
+- [x] [Observer pattern](https://github.com/M-krishna/OOP/tree/main/design_patterns/observer_pattern)
