@@ -8,7 +8,7 @@ from abc import ABC, abstractmethod
 # Create Interface(ABC) for Observer
 class Observer(ABC):
     @abstractmethod
-    def update():
+    def update(self):
         pass
 
 
