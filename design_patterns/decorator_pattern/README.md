@@ -132,3 +132,78 @@ print(cheese_pizza_with_olive_and_corn_toppings.cost())  # new updated cost
 Looking at the above piece of code we can clearly see how easy it is to add toppings to the Pizza without modifying the existing Pizza code. We are wrapping the `Pizza` instance with the `Toppings` instance. Since `Toppings` inherits from `Pizza` we have access to the `cost` and `description` that we can use to update the `Pizza`.
 
 This code example can be found in `decorator_pattern_example_2.py`
+
+## What happens if we add size to Pizza
+
+Lets create a `Size` class of type `Enum` to define our sizes and update our Pizza class to add the size feature.
+```python
+from enum import Enum
+
+
+class Size(Enum):
+    SMALL = 1
+    MEDIUM = 2
+    LARGE = 3
+
+
+class Pizza(ABC):
+    description: str
+    size: Size
+
+    def getDescription(self) -> str:
+        return self.description
+
+    @abstractmethod
+    def cost(self) -> float:
+        pass
+
+    def setSize(self, size: Size) -> None:
+        self.size = size
+
+    @property
+    def getSize(self) -> Size:
+        return self.size
+```
+
+We've added an instance variable `size` which is of type `Size` to store the size data and we've couple of other methods to get and set the size. Now let's update the concrete classes of Pizza.
+
+```python
+class CheesePizza(Pizza):
+    def __init__(self):
+        self.description = "Cheese pizza"
+        self.size = Size.SMALL
+
+    def cost(self) -> float:
+        return 100
+
+
+class PizzaMargherita(Pizza):
+    def __init__(self):
+        self.description = "Pizza Margherita"
+        self.size = Size.MEDIUM
+
+    def cost(self) -> float:
+        return 200
+```
+
+We've set the default size of the Pizza in the above piece of code. Now, we've to update the `cost` method of the `toppings` to update the cost based on the size of the Pizza.
+
+```python
+class OliveTopping(Toppings):
+    def __init__(self, pizza: Pizza):
+        self.description = "olive"
+        self.pizza = pizza
+
+    def getDescription(self) -> str:
+        return f"{self.pizza.getDescription()}, olive topping"
+
+    def cost(self) -> float:
+        if self.pizza.getSize == Size.SMALL:
+            return self.pizza.cost() + 10
+        elif self.pizza.getSize == Size.MEDIUM:
+            return self.pizza.cost() + 20
+        elif self.pizza.getSize == Size.LARGE:
+            return self.pizza.cost() + 30
+        else:
+            return self.pizza.cost()
+```

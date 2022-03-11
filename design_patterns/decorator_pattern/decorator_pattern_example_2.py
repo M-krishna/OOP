@@ -6,10 +6,19 @@ Pizza Shop
 
 
 from abc import ABC, abstractmethod
+from enum import Enum
+
+
+class Size(Enum):
+    SMALL = 1
+    MEDIUM = 2
+    LARGE = 3
+
 
 # abstract Pizza class
 class Pizza(ABC):
     description: str
+    size: Size
 
     def getDescription(self) -> str:
         return self.description
@@ -17,6 +26,13 @@ class Pizza(ABC):
     @abstractmethod
     def cost(self) -> float:
         pass
+
+    def setSize(self, size: Size) -> None:
+        self.size = size
+
+    @property
+    def getSize(self) -> Size:
+        return self.size
 
 
 # abstract Toppings class
@@ -32,6 +48,7 @@ class Toppings(Pizza, ABC):
 class CheesePizza(Pizza):
     def __init__(self):
         self.description = "Cheese pizza"
+        self.size = Size.SMALL
 
     def cost(self) -> float:
         return 100
@@ -40,6 +57,7 @@ class CheesePizza(Pizza):
 class PizzaMargherita(Pizza):
     def __init__(self):
         self.description = "Pizza Margherita"
+        self.size = Size.MEDIUM
 
     def cost(self) -> float:
         return 200
@@ -55,7 +73,14 @@ class OliveTopping(Toppings):
         return f"{self.pizza.getDescription()}, olive topping"
 
     def cost(self) -> float:
-        return self.pizza.cost() + 20
+        if self.pizza.getSize == Size.SMALL:
+            return self.pizza.cost() + 10
+        elif self.pizza.getSize == Size.MEDIUM:
+            return self.pizza.cost() + 20
+        elif self.pizza.getSize == Size.LARGE:
+            return self.pizza.cost() + 30
+        else:
+            return self.pizza.cost()
 
 
 class CornTopping(Toppings):
