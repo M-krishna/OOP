@@ -5,14 +5,14 @@ Observer pattern example 2
 import time
 from abc import ABC, abstractmethod
 
-# Create Interface(ABC) for Observer
+# Create Interface(Abstract base class) for Observer
 class Observer(ABC):
     @abstractmethod
     def update(self):
         pass
 
 
-# Create Interface(ABC) for Subject
+# Create Interface(Abstract base class) for Subject
 class Subject(ABC):
     @abstractmethod
     def registerObserver(self, observer: Observer):
@@ -27,7 +27,7 @@ class Subject(ABC):
         pass
 
 
-# Create Interface(ABC) for Display
+# Create Interface(Abstract base class) for Display
 class DisplayElement(ABC):
     @abstractmethod
     def display(self):
